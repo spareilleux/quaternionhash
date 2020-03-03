@@ -24,7 +24,7 @@ namespace QuaternionHash
                 s.Select(c => _quaternionByChar[c])
                  .Aggregate(Quaternion.Identity, (q, cq) => q * cq);
 
-            // result = Quaternion.Normalize(result);
+            result = Quaternion.Normalize(result);
 
             return result;
         }
@@ -105,9 +105,10 @@ namespace QuaternionHash
             wBits.CopyTo(wArray, 0);
             var w = wArray.First();
 
-            var quaternion = new Quaternion(x, y, z, w);
-            quaternion = Quaternion.Normalize(quaternion);
-            return quaternion;
+            var result = new Quaternion(x, y, z, w);
+            result = Quaternion.Normalize(result);
+
+            return result;
         }
     }
 }
