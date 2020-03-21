@@ -1,2 +1,2 @@
 # quaternionhash
-Quaternion-based hash
+Quaternion-based hash experiment
